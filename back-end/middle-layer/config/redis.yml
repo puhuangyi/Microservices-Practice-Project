@@ -1,0 +1,4 @@
+Addr: redis:6379
+MaxIdle: 8
+MaxActive: 0
+IdleTimeout: 20 #seconds

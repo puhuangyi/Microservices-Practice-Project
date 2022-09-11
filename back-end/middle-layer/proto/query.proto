@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+option go_package = "./;proto";
+option java_package = "proto"; //java package name
+
+package proto;
+
+service QueryService {
+    rpc QueryCastleFare (castleFareRequest) returns (castleFareResponse);
+    rpc QueryCastleInfo (castleInfoRequest) returns (castleInfoResponse);
+    rpc QueryBusFare (busFareRequest) returns (busFareResponse);
+    rpc QueryTrainFare (trainFareRequest) returns (trainFareResponse);
+    rpc QueryRouteToCastle (routeToCastleRequest) returns (routeToCastleResponse);
+    rpc QueryStartTime (startTimeRequest) returns (startTimeResponse);
+}
+
+message castleFareRequest {
+    string castle = 1;
+}
+
+message castleFareResponse {
+    float fare = 1;
+}
+
+message castleInfoRequest {
+    string castle = 1;
+    string day = 2;
+}
+
+message castleInfoResponse {
+    bool isOpen = 1;
+    string openTime = 2;
+    string description = 3;
+}
+
+message busFareRequest {
+    string noc = 1;
+    string busName = 2;
+}
+
+message busFareResponse {
+    double fare = 1;
+}
+
+message trainFareRequest {
+    string trainName = 1;
+}
+
+message trainFareResponse {
+    float fare = 1;
+}
+
+message routeToCastleRequest {
+    string original = 1;
+    string destination = 2;
+}
+
+message routeToCastleInfo {
+    string original = 1;
+    string destination = 2;
+    string type = 3;
+    string transportName = 4;
+    string noc = 6; //not operator ID. please give noc of this bus if type is bus.
+    int32 step = 7;
+    string comment = 8; 
+}
+
+message routeToCastleResponse {
+    int32 routeID = 1;
+    repeated routeToCastleInfo info = 2;
+}
+
+message startTimeRequest {
+   int32 routeID = 1;
+   int32 day = 2;
+}
+
+message startTimeResponse {
+    repeated string time = 1;
+}

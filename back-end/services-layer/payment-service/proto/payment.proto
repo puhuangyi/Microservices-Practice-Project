@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option go_package = "./;proto";
+
+package proto;
+
+
+service PaymentService {
+    rpc Payment (PaymentInfo) returns (ResPayInfo);
+    rpc QueryOrder (QueryOrderUserID) returns (OrderInfoList);
+}
+
+message PaymentInfo {
+    string customerID = 1;
+    double transactionAmount = 2;
+    string start =3;
+    string destination = 4;
+    int32 number = 5;
+    int32 routeDetailID =6;
+    string date = 7;
+    string type = 8;
+}
+
+message ResPayInfo {
+    bool status = 1;
+    string reason = 2;
+}
+
+message QueryOrderUserID {
+    string userID = 1;
+}
+
+message OrderInfoList {
+    repeated OrderInfo orders = 1;
+}
+
+message OrderInfo {
+    int32 orderID = 1;
+    double amount = 2;
+    string start =3;
+    string destination = 4;
+    int32 number = 5;
+    int32 routeDetailID =6;
+    string date = 7;
+    string type = 8;
+    string time = 9;
+}

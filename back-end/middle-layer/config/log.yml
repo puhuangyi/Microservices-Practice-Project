@@ -1,0 +1,37 @@
+LogConfig:
+- 
+ name: "server"
+ logName: "/home/middle-layer/log/server"
+ logFormat: ".%Y-%m-%d.log"
+ logRotationTime: 24
+ logMaxSavingTime: 168
+- 
+ name: "gin"
+ logName: "/home/middle-layer/log/gin"
+ logFormat: ".%Y-%m-%d.log"
+ logRotationTime: 48
+ logMaxSavingTime: 336
+-
+ name: "authentication"
+ logName: "/home/middle-layer/log/authentication"
+ logFormat: ".%Y-%m-%d.log"
+ logRotationTime: 24
+ logMaxSavingTime: 336
+-
+ name: "location"
+ logName: "/home/middle-layer/log/location"
+ logFormat: ".%Y-%m-%d.log"
+ logRotationTime: 24
+ logMaxSavingTime: 336
+-
+ name: "login"
+ logName: "/home/middle-layer/log/login"
+ logFormat: ".%Y-%m-%d.log"
+ logRotationTime: 24
+ logMaxSavingTime: 336
+-
+ name: "query"
+ logName: "/home/middle-layer/log/query"
+ logFormat: ".%Y-%m-%d.log"
+ logRotationTime: 24
+ logMaxSavingTime: 336

@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  middle-layer:
+    image: middle-layer:1.0
+    depends_on:
+      - redis
+    volumes: 
+      - /tmp/project/middle-layer:/home/middle-layer/log
+    restart: always
+    ports:
+      - "443:8080"
+  
+  location-service:
+    image: location-service:1.0
+    volumes:
+      - /tmp/project/location-service:/home/location-service/log
+    restart: always
+
+  payment-service:
+    image: payment-service:1.0
+    volumes:
+      - /tmp/project/payment-service:/home/payment-service/log
+    restart: always
+
+  login-service:
+    image: login-service:1.0
+    volumes:
+      - /tmp/project/login-service:/home/login-service/log
+    restart: always
+
+  redis:
+    image: redis
+    restart: always
+
+  query-service:
+    image: query-service:1.0
+    restart: always

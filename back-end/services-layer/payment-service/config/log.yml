@@ -1,0 +1,4 @@
+logName: "/home/payment-service/log/payment-service"
+logFormat: ".%Y-%m-%d.log"
+logRotationTime: 48
+logMaxSavingTime: 168

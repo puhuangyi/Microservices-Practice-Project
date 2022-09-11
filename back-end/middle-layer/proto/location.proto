@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "./;proto";
+
+package proto;
+
+service LocationService {
+    rpc QueryLocation (BusInfo) returns (ResBusInfos);
+}
+
+message BusInfo {
+    string reginol = 1;
+    string busName = 2;
+}
+
+message ResBusInfo {
+    string busRef = 1;
+    double longitude = 2;
+    double latitude = 3;
+    int32 seatFree = 4;
+    int32 wheelFree = 5;
+}
+
+message ResBusInfos {
+    repeated ResBusInfo info = 1;
+}

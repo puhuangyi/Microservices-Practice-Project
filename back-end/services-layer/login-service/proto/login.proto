@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package = "./;proto";
+
+package proto;
+
+service LoginService {
+    rpc Register (UserInfo) returns (ResUserInfo);
+    rpc Login (LoginInfo) returns (ResLoginInfo);
+}
+
+message UserInfo {
+    string userID = 1;
+    string email = 2;
+    string password = 3;
+}
+
+message ResUserInfo {
+    bool flag = 1;
+}
+
+message LoginInfo {
+    string userID = 1;
+    string password = 2;
+}
+
+message ResLoginInfo {
+    bool flag = 1;
+}

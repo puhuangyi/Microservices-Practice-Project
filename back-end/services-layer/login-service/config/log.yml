@@ -1,0 +1,4 @@
+logName: "/home/login-service/log/login-service"
+logFormat: ".%Y-%m-%d.log"
+logRotationTime: 24
+logMaxSavingTime: 168

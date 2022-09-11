@@ -1,0 +1,4 @@
+logName: "/home/location-service/log/location-service"
+logFormat: ".%Y-%m-%d.log"
+logRotationTime: 24
+logMaxSavingTime: 168
